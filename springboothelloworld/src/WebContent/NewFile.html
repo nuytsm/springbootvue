@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	 <script
+      src="https://npmcdn.com/vue/dist/vue.js">
+    </script>
+    <script src="script.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+	
+    <div id="app">
+    
+<!--     <input v-model="search" placeholder="search"> -->
+    
+    	<input v-model="message" placeholder="edit me">
+    	<button v-on:click="loadAlbums">request from spring boot</button>
+    	<button v-on:keyup.enter="addtolist" v-on:click="addtolist">ok</button>
+    	
+    	<ol id="example-1">
+		  <li v-for="(item, index) in list" :key="item" v-on:click="removefromlist(index)">
+		    {{ item }}
+		  </li>
+		</ol>
+    
+    </div>
+</body>
+</html>
